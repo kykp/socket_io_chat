@@ -3,7 +3,7 @@ import { SOCKET_URL } from "../config.js";
 let socket;
 
 export const initiateSocketConnection = (name, room) => {
-  socket = io(SOCKET_URL);
+  socket = io();
   // console.log(`Connecting socket...`);
   socket.emit("user join", { name, room });
 };
