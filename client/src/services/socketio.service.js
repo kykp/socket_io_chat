@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
-import { SOCKET_URL } from "../config.js";
+// import { SOCKET_URL } from "../config.js";
 let socket;
 
 export const initiateSocketConnection = (name, room) => {
