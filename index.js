@@ -15,7 +15,7 @@ import { formatMessage } from "./utils/message.js";
 const app = express();
 
 app.get("/", (req, res) => {
-  res.write(`<h1> Socket IO Start on Port : ${port}</h1>>`);
+  res.sendFile(path.resolve(__dirname, "../client/public", "index.html"));
   res.end();
 });
 // const PORT = 3002;
