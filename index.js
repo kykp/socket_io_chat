@@ -14,17 +14,20 @@ import {
 import { formatMessage } from "./utils/message.js";
 const app = express();
 
-app.use(
-  express.static(path.join(__dirname, "../client/build/public", "index.html"))
-);
-app.use(express.static("public"));
+// app.use(
+//   express.static(path.join(__dirname, "../client/build/public", "index.html"))
+// );
+// app.use(express.static("public"));
 
-// app.use((req, res, next) => {
-//   res.sendFile(path.join(__dirname, "../client/build/public", "index.html"));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "", "index.html"));
 // });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/public", "index.html"));
+app.use(express.static(path.join(__dirname, "..", "build")));
+app.use(express.static("public"));
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "index.html"));
 });
 
 // const PORT = 3002;
