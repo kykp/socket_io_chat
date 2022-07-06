@@ -14,6 +14,10 @@ import {
 import { formatMessage } from "./utils/message.js";
 const app = express();
 
+app.get("/", (req, res) => {
+  res.write(`Hello Heroku`);
+  res.end();
+});
 // const PORT = 3002;
 const port = process.env.PORT || 5000;
 
