@@ -28,6 +28,9 @@ app.use(express.static(buildPath));
 app.get("/", (res, req) => {
   res.send("Hello from Node js");
 });
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
 
 const io = new Server(server, {
   cors: {
