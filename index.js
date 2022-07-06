@@ -15,8 +15,7 @@ import { formatMessage } from "./utils/message.js";
 const app = express();
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/public", "index.html"));
-  res.end();
+  res.send("This is from express.js");
 });
 // const PORT = 3002;
 const port = process.env.PORT || 5000;
