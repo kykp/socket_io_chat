@@ -20,9 +20,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build/", "index.html"));
-});
+app.use(express.static("client/build/"));
 
 const server = http.createServer(app);
 
