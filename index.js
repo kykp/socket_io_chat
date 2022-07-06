@@ -1,4 +1,5 @@
 import express from "express";
+import { fileURLToPath } from "url";
 import http from "http";
 import cors from "cors";
 import path from "path";
@@ -13,6 +14,8 @@ import {
 
 import { formatMessage } from "./utils/message.js";
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // app.use(
 //   express.static(path.join(__dirname, "../client/build/public", "index.html"))
