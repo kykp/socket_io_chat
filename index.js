@@ -14,7 +14,8 @@ import {
 import { formatMessage } from "./utils/message.js";
 const app = express();
 
-const PORT = 3002;
+// const PORT = 3002;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -76,6 +77,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`server was running on port ${PORT}`);
+server.listen(port, () => {
+  console.log(`server was running on port ${port}`);
 });
