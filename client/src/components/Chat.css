@@ -1,0 +1,118 @@
+.chat {
+    max-width: 100%;
+    min-width: 70%;
+    min-height: 70vh;
+    background-color: rgb(48, 170, 240);
+    border-top-right-radius: 15px;
+}
+
+.form {
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(48, 170, 240);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.form-textarea {
+    margin-top: 8px;
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+.form-textarea:active{
+    border: none;
+    outline:none;
+  }
+.btn {
+    padding: 7px;
+    border:none;
+    cursor: pointer;
+    background-color: rgb(48, 170, 240);
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all .4s ease;
+} 
+.btn:hover {
+    color: white;
+}
+.chat-left-side {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 10px;
+    min-width: 30%;
+    background-color:  rgb(48, 170, 240);
+    color: black;
+    border-top-left-radius: 15px;
+}
+.chat-left-side_btn {
+    /* background: rgba(255, 255, 255, 0.083); */
+    border: none;
+    margin: 0 auto;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px;
+    margin-top: 15px;
+    min-width: 50%;
+    border-radius: 5px;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+.chat-left-side_btn:hover {
+    background: rgb(48, 170, 240);
+    color: white;
+}
+.chat-window {
+    width: 100%;
+    border-left: 5px solid rgb(48, 170, 240);
+    border-top: 10px solid rgb(48, 170, 240);
+    border-right: 15px solid rgb(48, 170, 240);
+    border-bottom: 20px solid rgb(48, 170, 240);;
+    background-color: white;
+    min-height: 100%;
+    max-height: 70vh;
+    height: 100%;
+    border-radius: 30px;
+    padding: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+.chat-window-message {
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    background-color: rgba(128, 128, 128, 0.357);
+    border-radius: 5px;
+    padding: 10px;
+    width: fit-content;
+}
+.forU {
+    margin-left: auto;
+    background-color: rgb(140, 151, 215);
+}
+
+.span-user {
+    font-size: 15px;
+    opacity: 0.5;
+}
+.span-text {
+    padding-top: 5px;
+    
+}
+@media screen and (max-width: 500px) {
+    .chat-left-side {
+        display: none;
+    }
+    
+}
