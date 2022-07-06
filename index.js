@@ -25,6 +25,10 @@ const server = http.createServer(app);
 const buildPath = path.join(__dirname, "client/build/index.html");
 app.use(express.static(buildPath));
 
+app.get("/", (res, req) => {
+  res.send("Hello from Node js");
+});
+
 const io = new Server(server, {
   cors: {
     origin: "https://kykp-chat-websocket.herokuapp.com/",
