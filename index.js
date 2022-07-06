@@ -26,13 +26,14 @@ const __dirname = path.dirname(__filename);
 //   res.sendFile(path.join(__dirname, "", "index.html"));
 // });
 
-app.use(
-  express.static(path.join(__dirname, "../client/build/", "index.html"))
-);
+app.use(express.static(path.join(__dirname, "../client/build/", "index.html")));
 
 app.use(express.static("public"));
 
 app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/", "index.html"));
+});
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/", "index.html"));
 });
 // const PORT = 3002;
