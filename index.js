@@ -7,14 +7,13 @@ import { Server } from "socket.io";
 import {
   userJoin,
   getCurrentUser,
-  users,
   getRoomUsers,
   userLeave,
 } from "./utils/users.js";
 
 import { formatMessage } from "./utils/message.js";
 const app = express();
-
+app.use(express.static("public"));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/public", "index.html"));
 });
