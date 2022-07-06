@@ -25,9 +25,6 @@ const server = http.createServer(app);
 const buildPath = path.join(__dirname, "client/build/index.html");
 app.use(express.static(buildPath));
 
-app.get("/", (res, req) => {
-  res.send("Hello from Node js");
-});
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
