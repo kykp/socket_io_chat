@@ -20,18 +20,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 5000;
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("build"));
+  app.get("*", (req, res) => {
+    req.sendFile(path.resolve(__dirname, "build", "index.html"));
+  });
+}
+
 const server = http.createServer(app);
-
-const buildPath = path.join(__dirname, "client/build/index.html");
-app.use(express.static(buildPath));
-
-// app.get("/", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "client/build/index.html"));
-// });
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
 
 const io = new Server(server, {
   cors: {
