@@ -21,7 +21,7 @@ const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
-  res.send("This is from express.js");
+  res.sendFile(path.join(__dirname, "client/build/", "index.html"));
 });
 
 const server = http.createServer(app);
