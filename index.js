@@ -27,7 +27,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "",
+    origin: "https://kykp-chat-websocket.herokuapp.com/",
     methods: ["GET", "POST"],
   },
 });
