@@ -29,12 +29,13 @@ const __dirname = path.dirname(__filename);
 app.use(
   express.static(path.join(__dirname, "../client/build/public", "index.html"))
 );
+
 app.use(express.static("public"));
 
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/public", "index.html"));
 });
-
+console.log(__dirname, "../client/build/public", "index.html");
 // const PORT = 3002;
 const port = process.env.PORT || 5000;
 
