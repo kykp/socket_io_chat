@@ -25,8 +25,12 @@ const server = http.createServer(app);
 const buildPath = path.join(__dirname, "client/build/index.html");
 app.use(express.static(buildPath));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client/build/index.html"));
+// app.get("/", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "client/build/index.html"));
+// });
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 const io = new Server(server, {
