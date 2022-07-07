@@ -1,8 +1,6 @@
 import express from "express";
-import { fileURLToPath } from "url";
 import http from "http";
 import cors from "cors";
-import path from "path";
 
 import { Server } from "socket.io";
 import {
@@ -16,8 +14,6 @@ import { formatMessage } from "./utils/message.js";
 const app = express();
 app.use(cors());
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 5000;
 
 app.use(express.static("client/build/"));
@@ -30,6 +26,7 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+
 const botName = "Chat Bot";
 
 io.on("connection", (socket) => {
