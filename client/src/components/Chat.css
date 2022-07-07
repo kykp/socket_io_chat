@@ -114,5 +114,11 @@
     .chat-left-side {
         display: none;
     }
+    .chat {
+        min-width: 100%
+    }
+    .chat-window{
+        border-right: 5px solid rgb(48, 170, 240);
+    }
     
 }
